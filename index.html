@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f6f5ef" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1113" media="(prefers-color-scheme: dark)">
+    <meta
+      name="description"
+      content="Shaurya Attreya is a high school student exploring physics, machine learning, scientific computing, and tools for learning."
+    >
+    <meta property="og:title" content="Shaurya Attreya">
+    <meta
+      property="og:description"
+      content="Physics, machine learning, and things I build."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/sa-logo.webp">
+    <title>Shaurya Attreya</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+
+    <main id="main" tabindex="-1">
+      <section class="hero" id="top" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Hello, I’m</p>
+          <h1 id="page-title">Shaurya Attreya</h1>
+          <p class="lede">I build at the intersection of physics and machine learning.</p>
+          <p>
+            High school student specializing in deep learning frameworks, machine learning algorithms, and scientific computing
+          </p>
+          <p class="contact-links">
+            <a href="mailto:shauryaattreya@gmail.com">Email</a>
+            <a href="https://github.com/ShauryaAttreya37" rel="me">GitHub</a>
+            <a href="https://www.linkedin.com/in/shaurya-attreya-ba962033b/" rel="me">LinkedIn</a>
+            <a href="https://www.physiverse.org/">Physiverse</a>
+          </p>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <img
+            src="assets/sa-logo.webp"
+            width="640"
+            height="640"
+            alt=""
+          >
+        </div>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="section-kicker">2026—present</p>
+          <h2 id="research-title">CrackTwin-Trust</h2>
+        </div>
+
+        <article class="feature">
+          <p class="feature-question">
+            Can a crack-tip estimator recognize when it should not be trusted?
+          </p>
+          <p>
+            Engineers use camera measurements to follow fatigue cracks in metal.
+            A model can automate that work, but a confident, wrong prediction is
+            dangerous. I’m studying how image models, fracture-mechanics fits,
+            and an independent crack-length sensor can check one another—and when
+            the system should stop and ask for review.
+          </p>
+
+          <dl class="results" aria-label="Selected development results">
+            <div>
+              <dt>0.801 mm</dt>
+              <dd>median error</dd>
+            </div>
+            <div>
+              <dt>333 / 334</dt>
+              <dd>predictions within 2 mm</dd>
+            </div>
+            <div>
+              <dt>167</dt>
+              <dd>external acquisitions</dd>
+            </div>
+          </dl>
+
+          <p>
+            The current 64-pixel model reached these results without training on
+            the external DLR experiment. A disagreement check between the image
+            model and the physics estimate also identified the one prediction
+            outside the 2&nbsp;mm target. These are development results, not a final
+            claim: the last benchmark split remains sealed while I freeze the
+            method and prepare a second independent test.
+          </p>
+
+          <details>
+            <summary>How the project changed</summary>
+            <p>
+              I began by trying to make a physics-informed neural network recover
+              crack position directly. It performed poorly: the inverse problem
+              did not contain enough information in each small measurement window.
+              That failure changed the research question. Instead of forcing one
+              model to solve every case, I now compare several estimators, measure
+              what information is actually present, and reject unsafe predictions.
+            </p>
+            <p>
+              A second surprise came from damaged inputs. On clean benchmark data,
+              the image model was almost perfect. Under structured occlusion it
+              could fail confidently, while simple neural confidence and scalar
+              physics residuals were both close to chance. The useful signal came
+              from disagreement with an independent sensor—not from assuming that
+              any single model knew its own limits.
+            </p>
+          </details>
+
+          <p class="tools">
+            Python · PyTorch · scientific computing · fracture mechanics · DIC
+          </p>
+        </article>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="section-kicker">Selected work</p>
+          <h2 id="projects-title">Things I’ve built</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project">
+            <div class="project-meta">
+              <span>Internship · Frontend &amp; AI</span>
+              <span>July 2026—present</span>
+            </div>
+            <h3><a href="https://github.com/OpenGraphAI/opengraph-ai">OpenGraph AI</a></h3>
+            <p>
+              Frontend designer and AI engineer at OpenGraph AI, an open-source
+              platform that turns tables, text, images, audio, and video into
+              queryable knowledge graphs for AI agent reasoning.
+            </p>
+            <p>
+              I designed and built the full public-facing landing page end to
+              end—marketing narrative, an interactive graph-exploration
+              playground, and a guided pipeline walkthrough—on React 19,
+              TanStack Router/Start/Query, Tailwind, and shadcn/ui, with
+              Supabase-backed auth and graph export. It isn't published yet;
+              I'm opening my first PRs next. I've also contributed to the
+              project's Model Context Protocol (MCP) tooling for
+              <code>opengraph-image</code>, which exposes five MCP tools so
+              any MCP-compatible agent can build and reason over an
+              image-derived knowledge graph conversationally.
+            </p>
+            <p class="tools">React 19 · TypeScript · TanStack · Tailwind · shadcn/ui · Supabase · Python · MCP</p>
+          </article>
+
+          <article class="project" id="project-aether">
+            <div class="project-meta">
+              <span>Hardware · Air quality</span>
+              <span>vivo Ignite 2026 · Achiever 30, Ed. 4</span>
+            </div>
+            <h3>Aether Smart Badge</h3>
+            <p>
+              A wearable air-quality monitor for outdoor workers. The badge
+              measures the PM2.5 a person actually encounters, keeps track of
+              cumulative exposure, and gives a physical warning through a haptic
+              motor. A phone connects over Bluetooth and adds a server-generated
+              72-hour pollution forecast.
+            </p>
+
+            <dl class="project-results" aria-label="Aether development metrics">
+              <div>
+                <dt>₹4,433</dt>
+                <dd>core badge parts</dd>
+              </div>
+              <div>
+                <dt>142 / 142</dt>
+                <dd>app tests passing</dd>
+              </div>
+              <div>
+                <dt>51.14</dt>
+                <dd>+24 h MAE (µg/m³)</dd>
+              </div>
+            </dl>
+
+            <p>
+              The first badge is assembled. An ESP32-C3, an SPS30 particle sensor
+              and a BME280 sit in a 3D-printed enclosure, and the badge's own
+              display shows the air-quality band, live PM2.5, running shift dose,
+              temperature and humidity, with no phone required. The companion app
+              is an installable PWA, also packaged for Android, and the FastAPI
+              server that feeds it passes its 15 API tests.
+            </p>
+
+            <div class="project-glimpses" aria-label="Aether prototype glimpse">
+              <div class="glimpse-heading">
+                <span class="glimpse-kicker">Prototype Glimpse</span>
+                <span class="glimpse-hint">Select to inspect full size</span>
+              </div>
+              <div class="glimpse-grid">
+                <a href="#modal-aether-badge" class="glimpse-card glimpse-card-wide" aria-label="Inspect: Assembled Aether badge prototype">
+                  <div class="glimpse-thumb">
+                    <img src="assets/aether_assets/badge-prototype.webp" alt="Aether badge prototype in an orange and blue 3D-printed enclosure, its display showing Satisfactory, 45 µg/m³ PM2.5, a shift dose of 112.6 µg·h/m³, 31 °C and 62% humidity, beside a caliper for scale" width="1600" height="900" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Hardware</span>
+                    <strong>Assembled badge with live reading and shift dose</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div id="modal-aether-badge" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Assembled Aether badge prototype">
+              <a href="#project-aether" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Hardware</span>
+                    <strong>Assembled Aether Badge: Live PM2.5, Band and Shift Dose On-Device</strong>
+                  </div>
+                  <a href="#project-aether" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/aether_assets/badge-prototype.webp" alt="Aether badge prototype in an orange and blue 3D-printed enclosure, its display showing Satisfactory, 45 µg/m³ PM2.5, a shift dose of 112.6 µg·h/m³, 31 °C and 62% humidity, beside a caliper for scale">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>3D-printed enclosure, caliper for scale · 1600 × 900 px</span>
+                  <a href="assets/aether_assets/badge-prototype.webp" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-glimpses" aria-label="Aether companion app screens">
+              <div class="glimpse-heading">
+                <span class="glimpse-kicker">App Glimpse</span>
+                <span class="glimpse-hint">Select a screen to enlarge</span>
+              </div>
+              <div class="phone-gallery">
+                <a href="#modal-aether-app-pairing" class="phone-card" aria-label="Inspect: Aether app pairing screen">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-pairing.webp" alt="Aether app pairing screen: Meet Aether, Air you can act on, a disconnected badge, a Pair badge button, and a Private by design note saying there is no account and no cloud history" width="393" height="852" loading="lazy">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                  <span class="phone-caption">
+                    <span class="glimpse-tag">Pair</span>
+                    <strong>Private by design</strong>
+                  </span>
+                </a>
+
+                <a href="#modal-aether-app-now" class="phone-card" aria-label="Inspect: Aether app Now screen">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-now.webp" alt="Aether app Now screen in demo mode with sample data: PM2.5 of 78 µg/m³ in the Moderate band, advice to limit exposure, shift dose at 64% of a 192 µg·h/m³ reference budget, and 138 µg/m³ expected in the next two hours" width="393" height="852" loading="lazy">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                  <span class="phone-caption">
+                    <span class="glimpse-tag">Now</span>
+                    <strong>Live reading &amp; shift dose</strong>
+                  </span>
+                </a>
+
+                <a href="#modal-aether-app-forecast" class="phone-card" aria-label="Inspect: Aether app Forecast screen">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-forecast.webp" alt="Aether app Forecast screen in demo mode with sample forecast data: mask-hour tiles for now, +1 h and +6 h, and a 72-hour outlook chart for Delhi-NCR with a shaded error band" width="393" height="852" loading="lazy">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                  <span class="phone-caption">
+                    <span class="glimpse-tag">Forecast</span>
+                    <strong>Mask hours &amp; 72-hour outlook</strong>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div id="modal-aether-app-pairing" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Aether app pairing screen">
+              <a href="#project-aether" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box glimpse-modal-box-phone">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Pair</span>
+                    <strong>Pair the Badge, No Account</strong>
+                  </div>
+                  <a href="#project-aether" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-pairing.webp" alt="Aether app pairing screen: Meet Aether, Air you can act on, a disconnected badge, a Pair badge button, and a Private by design note saying there is no account and no cloud history">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Companion PWA · 393 × 852 px</span>
+                  <a href="assets/aether_assets/app-pairing.webp" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-aether-app-now" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Aether app Now screen">
+              <a href="#project-aether" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box glimpse-modal-box-phone">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Now</span>
+                    <strong>Live Reading and Shift Dose</strong>
+                  </div>
+                  <a href="#project-aether" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-now.webp" alt="Aether app Now screen in demo mode with sample data: PM2.5 of 78 µg/m³ in the Moderate band, advice to limit exposure, shift dose at 64% of a 192 µg·h/m³ reference budget, and 138 µg/m³ expected in the next two hours">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Companion PWA · demo mode, sample data · 393 × 852 px</span>
+                  <a href="assets/aether_assets/app-now.webp" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-aether-app-forecast" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Aether app Forecast screen">
+              <a href="#project-aether" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box glimpse-modal-box-phone">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Forecast</span>
+                    <strong>Mask Hours and 72-Hour Outlook</strong>
+                  </div>
+                  <a href="#project-aether" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <div class="iphone">
+                    <div class="iphone-screen">
+                      <img src="assets/aether_assets/app-forecast.webp" alt="Aether app Forecast screen in demo mode with sample forecast data: mask-hour tiles for now, +1 h and +6 h, and a 72-hour outlook chart for Delhi-NCR with a shaded error band">
+                    </div>
+                    <span class="iphone-island" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Companion PWA · demo mode, sample forecast data · 393 × 852 px</span>
+                  <a href="assets/aether_assets/app-forecast.webp" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              I froze the evaluation rules before training. The deployable
+              gradient-boosted model clears the +24-hour gate on an untouched test
+              winter (51.14 MAE and 84.62&nbsp;µg/m³ RMSE, versus persistence at
+              51.86 and 99.46) and remains the forecast used by the demo.
+            </p>
+            <p>
+              The retrained residual Fourier Neural Operator is a partial success:
+              on the anchored evaluation it beats persistence and climatology at
+              +6, +48, and +72 hours, but not at +24 hours. I report the winning
+              and losing horizons explicitly; the next model change is a trained
+              origin-observation channel, not an unsupported production claim.
+            </p>
+            <p>
+              Still open: the sensor has not been calibrated against a reference
+              monitor, so dose is a relative measure for now; the forecast in the
+              demo is a labelled historical hindcast, not live data; and no badge
+              has yet run a full shift on a worker. Calibration and a small field
+              pilot come next.
+            </p>
+            <p class="tools">ESP32-C3 · C++ · BLE · Python · FastAPI · PWA · CadQuery · 3D printing · forecasting</p>
+          </article>
+
+          <article class="project" id="project-rsna">
+            <div class="project-meta">
+              <span>Medical imaging · Competition</span>
+              <span>In progress</span>
+            </div>
+            <h3>RSNA Knee MRI Abnormality Detection</h3>
+            <p>
+              A system for predicting twelve knee abnormalities from multi-series
+              MRI scans. The dataset contains 4,407 studies but only 58 with expert
+              labels, so I used multilingual radiology reports to create soft
+              supervision for the remaining scans, then trained a 2.5D vision
+              transformer across sagittal, coronal, and axial views.
+            </p>
+
+            <dl class="project-results" aria-label="RSNA development metrics">
+              <div>
+                <dt>0.7835</dt>
+                <dd>pooled OOF macro AUC</dd>
+              </div>
+              <div>
+                <dt>+0.0973</dt>
+                <dd>AUC over the first version</dd>
+              </div>
+              <div>
+                <dt>819,078</dt>
+                <dd>training DICOMs audited</dd>
+              </div>
+            </dl>
+
+            <p>
+              With the imaging architecture held fixed, a stronger three-source
+              report-label ensemble improved every validation fold. Its label AUC
+              was 0.8956 on the common 57-study expert subset, while five-fold mean
+              imaging AUC rose from 0.7239 to 0.8125. The 0.7835 figure is the strict
+              pooled out-of-fold result across all 58 expert-labeled studies. A
+              competition leaderboard result is still pending, and this is a
+              research system—not a clinical diagnostic tool.
+            </p>
+
+            <div class="project-glimpses" aria-label="RSNA pipeline and notebook glimpses">
+              <div class="glimpse-heading">
+                <span class="glimpse-kicker">Notebook &amp; Model Glimpse</span>
+                <span class="glimpse-hint">Select to inspect full size</span>
+              </div>
+              <div class="glimpse-grid">
+                <a href="#modal-rsna-2" class="glimpse-card" aria-label="Inspect: Full-FOV Aspect-Fitted MRI Slice Cache">
+                  <div class="glimpse-thumb">
+                    <img src="assets/rsna_assets/2.png" alt="Jupyter notebook output of 8 knee MRI sagittal slices aspect-fitted" width="1919" height="921" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">DICOM Processing</span>
+                    <strong>Cached series slices (aspect-fitted)</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-rsna-4" class="glimpse-card" aria-label="Inspect: Training Convergence Gate Curves">
+                  <div class="glimpse-thumb">
+                    <img src="assets/rsna_assets/4.png" alt="Jupyter notebook plots of loss convergence, binary accuracy, and macro AUC progression" width="1920" height="919" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Gate Verification</span>
+                    <strong>Loss, accuracy &amp; macro AUC gate</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-rsna-1" class="glimpse-card" aria-label="Inspect: Cache Inspection & Gate Setup Notebook">
+                  <div class="glimpse-thumb">
+                    <img src="assets/rsna_assets/1.png" alt="Jupyter notebook cell inspecting tensor shapes and setting overfit gate requirements" width="1920" height="911" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Pipeline Setup</span>
+                    <strong>Study cache inspection &amp; gate criteria</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-rsna-3" class="glimpse-card" aria-label="Inspect: 160-Epoch Memorization Gate Logs">
+                  <div class="glimpse-thumb">
+                    <img src="assets/rsna_assets/3.png" alt="Jupyter notebook training logs from epoch 1 to epoch 160 showing convergence" width="1921" height="920" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Training Logs</span>
+                    <strong>160-epoch memorization progress</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-rsna-5" class="glimpse-card glimpse-card-wide" aria-label="Inspect: Gold Fine-Tuning Loss & Held-Out Macro AUC">
+                  <div class="glimpse-thumb glimpse-thumb-wide">
+                    <img src="assets/rsna_assets/5.png" alt="Plots of gold fine-tuning loss and held-out gold macro AUC across epochs" width="1275" height="392" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Model Evaluation</span>
+                    <strong>Gold fine-tuning loss &amp; held-out macro AUC</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Modals for RSNA -->
+            <div id="modal-rsna-2" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Cached series slices (aspect-fitted)">
+              <a href="#project-rsna" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">DICOM Processing</span>
+                    <strong>Cached Series Slices (Full-FOV Aspect-Fitted)</strong>
+                  </div>
+                  <a href="#project-rsna" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/rsna_assets/2.png" alt="Jupyter notebook output of 8 knee MRI sagittal slices aspect-fitted">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Aspect-fitted multi-slice knee MRI series (Slice 0 to 14) · 1919 × 921 px</span>
+                  <a href="assets/rsna_assets/2.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-rsna-4" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Loss, accuracy & macro AUC gate">
+              <a href="#project-rsna" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Gate Verification</span>
+                    <strong>Overfit Training Gate: BCE Loss, Accuracy &amp; Macro AUC</strong>
+                  </div>
+                  <a href="#project-rsna" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/rsna_assets/4.png" alt="Jupyter notebook plots of loss convergence, binary accuracy, and macro AUC progression">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Convergence curves reaching loss &le; 0.05, accuracy 100%, macro AUC &ge; 0.99 · 1920 × 919 px</span>
+                  <a href="assets/rsna_assets/4.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-rsna-1" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Study cache inspection & gate criteria">
+              <a href="#project-rsna" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Pipeline Setup</span>
+                    <strong>Study Cache Inspection &amp; Gate Specifications</strong>
+                  </div>
+                  <a href="#project-rsna" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/rsna_assets/1.png" alt="Jupyter notebook cell inspecting tensor shapes and setting overfit gate requirements">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Tensor cache dimensions, hit rate verification, and gate setup · 1920 × 911 px</span>
+                  <a href="assets/rsna_assets/1.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-rsna-3" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="160-epoch memorization progress">
+              <a href="#project-rsna" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Training Logs</span>
+                    <strong>160-Epoch Memorization Gate Progress</strong>
+                  </div>
+                  <a href="#project-rsna" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/rsna_assets/3.png" alt="Jupyter notebook training logs from epoch 1 to epoch 160 showing convergence">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Epoch-by-epoch loss reduction and macro AUC progression to 0.9874 · 1921 × 920 px</span>
+                  <a href="assets/rsna_assets/3.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-rsna-5" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Gold fine-tuning loss & held-out macro AUC">
+              <a href="#project-rsna" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Model Evaluation</span>
+                    <strong>Gold Fine-Tuning Loss &amp; Held-Out Macro AUC</strong>
+                  </div>
+                  <a href="#project-rsna" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/rsna_assets/5.png" alt="Plots of gold fine-tuning loss and held-out gold macro AUC across epochs">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Training BCE loss and held-out gold macro AUC across 11 fine-tuning epochs · 1275 × 392 px</span>
+                  <a href="assets/rsna_assets/5.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <p class="tools">PyTorch · DINOv2 · DICOM · weak supervision · five-fold validation</p>
+          </article>
+
+          <article class="project" id="project-physiverse">
+            <div class="project-meta">
+              <span>Web · Physics</span>
+              <span>Complete</span>
+            </div>
+            <h3><a href="https://www.physiverse.org/">Physiverse</a></h3>
+            <p>
+              A browser-based physics lab for learning by changing a system and
+              watching it respond. I built interactive simulations that connect
+              equations with motion, parameter sweeps, and visual experiments.
+            </p>
+
+            <dl class="project-results" aria-label="Physiverse platform metrics">
+              <div>
+                <dt>40</dt>
+                <dd>interactive simulations</dd>
+              </div>
+              <div>
+                <dt>8</dt>
+                <dd>subject areas</dd>
+              </div>
+              <div>
+                <dt>3</dt>
+                <dd>numerical solvers</dd>
+              </div>
+            </dl>
+
+            <p>
+              The library spans mechanics, fluids, electromagnetism, optics,
+              thermodynamics, waves, quantum mechanics, and introductory machine
+              learning. Simulations include live measurements, graphs, guided
+              experiments, and data export.
+            </p>
+
+            <div class="project-glimpses" aria-label="Physiverse simulation glimpses">
+              <div class="glimpse-heading">
+                <span class="glimpse-kicker">Simulation Glimpse</span>
+                <span class="glimpse-hint">Select to inspect full size</span>
+              </div>
+              <div class="glimpse-grid">
+                <a href="#modal-physiverse-engine" class="glimpse-card" aria-label="Inspect: Interactive 4-Stroke Engine & PV Diagram">
+                  <div class="glimpse-thumb">
+                    <img src="assets/physiverse_assets/Screenshot_20260908_072958.png" alt="Interactive 3D crank-slider four-stroke engine simulation with live PV diagram" width="1920" height="885" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Thermodynamics &amp; Mechanics</span>
+                    <strong>4-stroke engine &amp; live PV indicator</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-physiverse-quantum" class="glimpse-card" aria-label="Inspect: Wave Packet Barrier Tunneling & 3D Waterfall">
+                  <div class="glimpse-thumb">
+                    <img src="assets/physiverse_assets/Screenshot_20260908_073625.png" alt="Quantum wave packet tunneling with 3D waterfall history and transmission curves" width="1920" height="883" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Quantum Mechanics</span>
+                    <strong>Wave packet barrier tunneling &amp; waterfall</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-physiverse-fluids" class="glimpse-card" aria-label="Inspect: Kármán Vortex Street Velocity Field">
+                  <div class="glimpse-thumb">
+                    <img src="assets/physiverse_assets/Screenshot_20260908_073651.png" alt="Fluid dynamics simulation showing Kármán vortex street velocity field" width="1920" height="882" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Fluid Dynamics</span>
+                    <strong>Kármán vortex street velocity field</strong>
+                  </div>
+                </a>
+
+                <a href="#modal-physiverse-lab" class="glimpse-card" aria-label="Inspect: Physiverse Lab Simulation Catalog">
+                  <div class="glimpse-thumb">
+                    <img src="assets/physiverse_assets/Screenshot_20260908_072941.png" alt="Physiverse Lab interactive simulation library across 8 subject areas" width="1637" height="948" loading="lazy">
+                    <span class="glimpse-zoom-badge" aria-hidden="true">Inspect ↗</span>
+                  </div>
+                  <div class="glimpse-caption">
+                    <span class="glimpse-tag">Library</span>
+                    <strong>40 interactive modules across 8 domains</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Modals for Physiverse -->
+            <div id="modal-physiverse-engine" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="4-stroke engine & live PV indicator">
+              <a href="#project-physiverse" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Thermodynamics &amp; Mechanics</span>
+                    <strong>Interactive 4-Stroke Crank-Slider Engine &amp; Live PV Diagram</strong>
+                  </div>
+                  <a href="#project-physiverse" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/physiverse_assets/Screenshot_20260908_072958.png" alt="Interactive 3D crank-slider four-stroke engine simulation with live PV diagram">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Interactive 3D engine at 240 RPM with real-time pressure-volume cycle · 1920 × 885 px</span>
+                  <a href="assets/physiverse_assets/Screenshot_20260908_072958.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-physiverse-quantum" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Wave packet barrier tunneling & waterfall">
+              <a href="#project-physiverse" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Quantum Mechanics</span>
+                    <strong>Wave Packet Barrier Tunneling, 3D Waterfall &amp; Transmission</strong>
+                  </div>
+                  <a href="#project-physiverse" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/physiverse_assets/Screenshot_20260908_073625.png" alt="Quantum wave packet tunneling with 3D waterfall history and transmission curves">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Time-dependent wave packet dynamics with rotating 3D waterfall history · 1920 × 883 px</span>
+                  <a href="assets/physiverse_assets/Screenshot_20260908_073625.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-physiverse-fluids" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Kármán vortex street velocity field">
+              <a href="#project-physiverse" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Fluid Dynamics</span>
+                    <strong>Kármán Vortex Street Velocity Field Simulation</strong>
+                  </div>
+                  <a href="#project-physiverse" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/physiverse_assets/Screenshot_20260908_073651.png" alt="Fluid dynamics simulation showing Kármán vortex street velocity field">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Fluid flow velocity field and shedding vortices behind an obstacle · 1920 × 882 px</span>
+                  <a href="assets/physiverse_assets/Screenshot_20260908_073651.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="modal-physiverse-lab" class="glimpse-modal" role="dialog" aria-modal="true" aria-label="Physiverse Lab simulation catalog">
+              <a href="#project-physiverse" class="glimpse-modal-backdrop" aria-label="Close modal"></a>
+              <div class="glimpse-modal-box">
+                <div class="glimpse-modal-top">
+                  <div class="glimpse-modal-title">
+                    <span class="glimpse-tag">Library</span>
+                    <strong>Physiverse Lab: Interactive Simulation Catalog</strong>
+                  </div>
+                  <a href="#project-physiverse" class="glimpse-modal-close" aria-label="Close modal">&times;</a>
+                </div>
+                <div class="glimpse-modal-view">
+                  <img src="assets/physiverse_assets/Screenshot_20260908_072941.png" alt="Physiverse Lab interactive simulation library across 8 subject areas">
+                </div>
+                <div class="glimpse-modal-bar">
+                  <span>Catalog browser spanning mechanics, fluids, quantum, thermodynamics · 1637 × 948 px</span>
+                  <a href="assets/physiverse_assets/Screenshot_20260908_072941.png" target="_blank" rel="noopener">Open full size ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <p class="tools">JavaScript · Canvas/WebGL · RK4 · adaptive RK45 · Yoshida integration</p>
+          </article>
+
+          <article class="project">
+            <div class="project-meta">
+              <span>Education · AI</span>
+              <span>Prototype</span>
+            </div>
+            <h3>Open-response marking engine</h3>
+            <p>
+              A tool for comparing written student answers with a teacher’s rubric.
+              I combined language-model feedback with semantic matching and fixed
+              validation rules to make the scoring more consistent and easier to
+              audit.
+            </p>
+            <p class="tools">Python · language models · REST APIs</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section interests-section" id="interests" aria-labelledby="interests-title">
+        <div class="section-heading">
+          <p class="section-kicker">Outside the work</p>
+          <h2 id="interests-title">Other things I enjoy</h2>
+        </div>
+
+        <div class="interest-grid">
+          <article>
+            <p class="interest-number" aria-hidden="true">01</p>
+            <h3>Soccer</h3>
+            <p>I play soccer—a welcome change of pace from long hours spent building and debugging.</p>
+          </article>
+          <article>
+            <p class="interest-number" aria-hidden="true">02</p>
+            <h3>Chess</h3>
+            <p>I enjoy chess and the quiet work of thinking through a position before making a move. I represented Kurukshetra at the zonal/district and state level in the 2024–25 season.</p>
+          </article>
+          <article class="reading-card">
+            <p class="interest-number" aria-hidden="true">03</p>
+            <h3>On my shelf</h3>
+            <p class="shelf-note">
+              These books have helped shape how I think, work, and approach difficult problems.
+            </p>
+            <ul class="reading-list">
+              <li>
+                <cite>Can’t Hurt Me</cite>
+                <span>David Goggins</span>
+              </li>
+              <li>
+                <cite>Artificial Intelligence: A Modern Approach</cite>
+                <span>4th edition · Stuart Russell and Peter Norvig</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-kicker">Away from the screen</p>
+          <h2 id="about-title">Learning with others</h2>
+        </div>
+
+        <div class="two-column">
+          <article>
+            <h3>School STEM Hub</h3>
+            <p>
+              I founded a school group for hands-on physics, introductory machine
+              learning, and Arduino projects. I write workshop material and help
+              younger students turn classroom ideas into working prototypes.
+            </p>
+          </article>
+          <article>
+            <h3>Scientific computing community</h3>
+            <p>
+              I also coordinate an online student community for physics simulation
+              and machine learning, with peer reviews, shared technical resources,
+              and small open-source collaborations.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section short-section" id="background" aria-labelledby="background-title">
+        <div class="section-heading">
+          <p class="section-kicker">Background</p>
+          <h2 id="background-title">A little more</h2>
+        </div>
+        <p>
+          I study at M. S. Senior Secondary School in Jhansa. I work mostly in
+          Python, Julia, JavaScript, and C/C++, with tools including PyTorch, JAX,
+          WebGL, and Arduino. My interests sit between computational mechanics,
+          scientific machine learning, and building better ways to explore
+          difficult ideas.
+        </p>
+      </section>
+    </main>
+
+    <section class="particle-sheet-section" aria-label="Interactive 3D particle terrain">
+      <canvas id="particle-sheet" class="particle-sheet-canvas"></canvas>
+      <div class="particle-sheet-baseline" aria-hidden="true"></div>
+    </section>
+
+    <footer>
+      <p>
+        If you’d like to talk about physics, research, or something you’re building,
+        <a href="mailto:shauryaattreya@gmail.com">send me a note</a>.
+      </p>
+      <p class="footer-note">Made with plain HTML and CSS. No framework, no tracking.</p>
+    </footer>
+
+    <!-- Aceternity-style Floating Dock Navigation -->
+    <nav class="floating-dock" aria-label="Floating navigation">
+      <!-- Desktop Floating Dock (macOS Magnification Physics) -->
+      <div class="floating-dock-desktop" role="menubar">
+        <a href="#top" class="dock-item is-active" aria-label="Home" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">Home</span>
+          <span class="dock-dot" aria-hidden="true"></span>
+        </a>
+
+        <a href="#research" class="dock-item" aria-label="Research" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="2.2" />
+            <path d="M12 21c-3.314 0 -6 -4.03 -6 -9s2.686 -9 6 -9s6 4.03 6 9s-2.686 9 -6 9z" transform="rotate(35 12 12)" />
+            <path d="M12 21c-3.314 0 -6 -4.03 -6 -9s2.686 -9 6 -9s6 4.03 6 9s-2.686 9 -6 9z" transform="rotate(145 12 12)" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">Research</span>
+          <span class="dock-dot" aria-hidden="true"></span>
+        </a>
+
+        <a href="#projects" class="dock-item" aria-label="Projects" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 9l3 3l-3 3" />
+            <line x1="13" y1="15" x2="17" y2="15" />
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">Projects</span>
+          <span class="dock-dot" aria-hidden="true"></span>
+        </a>
+
+        <a href="#interests" class="dock-item" aria-label="Interests" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.18" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">Interests</span>
+          <span class="dock-dot" aria-hidden="true"></span>
+        </a>
+
+        <a href="#about" class="dock-item" aria-label="About" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="7" r="4" />
+            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">About</span>
+          <span class="dock-dot" aria-hidden="true"></span>
+        </a>
+
+        <div class="dock-divider" aria-hidden="true"></div>
+
+        <a href="https://github.com/ShauryaAttreya37" target="_blank" rel="me noopener" class="dock-item" aria-label="GitHub" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span class="dock-tooltip" role="tooltip">GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/shaurya-attreya-ba962033b/" target="_blank" rel="me noopener" class="dock-item" aria-label="LinkedIn" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.91 0-1.64.73-1.64 1.64s.73 1.64 1.64 1.64 1.64-.73 1.64-1.64-.73-1.64-1.64-1.64z"/>
+          </svg>
+          <span class="dock-tooltip" role="tooltip">LinkedIn</span>
+        </a>
+
+        <a href="mailto:shauryaattreya@gmail.com" class="dock-item" aria-label="Email" role="menuitem">
+          <svg class="dock-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <polyline points="3 7 12 13 21 7" />
+          </svg>
+          <span class="dock-tooltip" role="tooltip">Email</span>
+        </a>
+      </div>
+
+      <!-- Mobile Expandable Floating Dock (Aceternity Mobile) -->
+      <div class="floating-dock-mobile">
+        <div class="dock-mobile-menu" role="menu" aria-label="Mobile navigation links">
+          <a href="#top" class="dock-mobile-item is-active" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+            </svg>
+            <span>Home</span>
+          </a>
+
+          <a href="#research" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="2.2" />
+              <path d="M12 21c-3.314 0 -6 -4.03 -6 -9s2.686 -9 6 -9s6 4.03 6 9s-2.686 9 -6 9z" transform="rotate(35 12 12)" />
+              <path d="M12 21c-3.314 0 -6 -4.03 -6 -9s2.686 -9 6 -9s6 4.03 6 9s-2.686 9 -6 9z" transform="rotate(145 12 12)" />
+            </svg>
+            <span>Research</span>
+          </a>
+
+          <a href="#projects" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 9l3 3l-3 3" />
+              <line x1="13" y1="15" x2="17" y2="15" />
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+            </svg>
+            <span>Projects</span>
+          </a>
+
+          <a href="#interests" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.18" />
+            </svg>
+            <span>Interests</span>
+          </a>
+
+          <a href="#about" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="7" r="4" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+            </svg>
+            <span>About</span>
+          </a>
+
+          <div class="dock-mobile-divider" aria-hidden="true"></div>
+
+          <a href="https://github.com/ShauryaAttreya37" target="_blank" rel="me noopener" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shaurya-attreya-ba962033b/" target="_blank" rel="me noopener" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.91 0-1.64.73-1.64 1.64s.73 1.64 1.64 1.64 1.64-.73 1.64-1.64-.73-1.64-1.64-1.64z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a href="mailto:shauryaattreya@gmail.com" class="dock-mobile-item" role="menuitem">
+            <svg class="dock-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <polyline points="3 7 12 13 21 7" />
+            </svg>
+            <span>Email</span>
+          </a>
+        </div>
+
+        <button class="dock-mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="dock-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="9" y1="4" x2="9" y2="20" />
+            <path d="M15 10l-2 2l2 2" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <script src="particle-sheet.js"></script>
+    <script src="floating-dock.js"></script>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && window.location.hash.startsWith("#modal-")) {
+          var targetId = window.location.hash.indexOf("rsna") !== -1 ? "project-rsna" : "project-physiverse";
+          window.location.hash = targetId;
+        }
+      });
+    </script>
+  </body>
+</html>
